@@ -30,8 +30,6 @@ class GFG {
 
 class Solution {
     int maximumSumRectangle(int R, int C, int M[][]) {
-        if(R==2 && C==2 && M[0][0]==-1 && M[0][1]==-2)
-         return -1;
         int kadane[] = new int[R];
         int maxSum = Integer.MIN_VALUE;
         for(int i=0;i<C;i++){
@@ -47,14 +45,15 @@ class Solution {
         return maxSum;
     }
     private int kdAlgo(int a[]){
-        int maxSum = 0;
+        int maxSum = Integer.MIN_VALUE;
         int currSum = 0;
         for(int i=0;i<a.length;i++){
             currSum+=a[i];
-            if(currSum<0)
-                currSum=0;
             if(currSum>maxSum)
              maxSum=currSum;
+            if(currSum<0)
+                currSum=0;
+            
         }
         return maxSum;
     }
