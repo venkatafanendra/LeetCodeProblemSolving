@@ -22,8 +22,9 @@ class Solution {
         return result;
     }
     private String sort(String temp){
-        char[] x = temp.toCharArray();
-        Arrays.sort(x);
-        return new String(x);
+        int[] x = new int[26];
+        for(char c : temp.toCharArray())
+            x[c-'a']++;
+        return Arrays.toString(x);
     }
 }
