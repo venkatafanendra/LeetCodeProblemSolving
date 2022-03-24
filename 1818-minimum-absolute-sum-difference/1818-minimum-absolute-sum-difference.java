@@ -4,11 +4,11 @@ class Solution {
         Arrays.sort(sorted);
         long sumDiff = 0;
         int mx=Integer.MIN_VALUE;
-        int diff=0;
+        int diff=0,index=-1;
         for(int i=0;i<nums2.length;i++){
             diff = Math.abs(nums1[i]-nums2[i]);
             sumDiff+=diff;
-            int index = Arrays.binarySearch(sorted,nums2[i]);
+            index = Arrays.binarySearch(sorted,nums2[i]);
             if(index<0)
                 index=-1*(index+1);
             if(index<sorted.length)
