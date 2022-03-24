@@ -4,8 +4,9 @@ class Solution {
         Arrays.sort(sorted);
         long sumDiff = 0;
         int mx=Integer.MIN_VALUE;
+        int diff=0;
         for(int i=0;i<nums2.length;i++){
-            int diff = Math.abs(nums1[i]-nums2[i]);
+            diff = Math.abs(nums1[i]-nums2[i]);
             sumDiff+=diff;
             int index = Arrays.binarySearch(sorted,nums2[i]);
             if(index<0)
